@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" conten="width=device-width,initial-scale=1.0" />
+        <title>IP Experiment 4</title>
+    </head>
+    <body>
+        <h1>html page</h1>
+        <p>Created the student object and printed the details</p>
+        <p>check console for output</p>
+        <hr>
+        <br>
+        <label for="get_error" >Enter your roll number</label>
+        <input  id="get_error" name="get_error"/>
+        <button type="submit" onclick="return check_error()">Submit</button>
+
+    </body>
+    <script>
+        
+        const person = new Object();
+            person.firstname = 'pratham';
+            person.lastname ='suroshi';
+            person.div = 'D15A';
+
+        console.log(person);
+
+        let Name = ( x, y,z) =>x + y +z; 
+        console.log(Name('pratham',' ','suroshi'));
+
+        class Person{
+            constructor(name){
+            this.firstname = name;
+            this.roll = '66';
+        }
+        Myname(){
+            console.log(`my name is ${this.name}`);
+        }
+    }
+        class Student extends Person{
+        constructor(name){
+            super(name);
+            this.roll = '75';
+        }
+        Myname(){
+            console.log(`Name : ${this.firstname}`);
+            console.log(`roll no : ${this.roll}`);
+        }
+    }
+
+        let p = new Student('pratham');
+        p.Myname();
+
+
+        function check_error(){
+            var roll = document.getElementById("get_error");
+            console.log(roll.value);
+            if(isNaN(roll.value) || roll.value < 1){
+                throw new Error("Invalid roll number");
+            }
+            else{
+                console.log("valid roll number");
+            }
+        }
+    </script>
+</html>
